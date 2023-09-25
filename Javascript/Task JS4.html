@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Task JS-4</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <button class="btn btn-outline-dark" onclick="date()">Show Date</button><br>
+        <div id="id1"></div>
+        <br><br>
+        <button class="btn btn-outline-dark" onclick="time()">Show Time</button><br>
+        <div id="id2"></div>
+    </div>
+    <script>
+        function date() {
+            const d = new Date();
+            var da = d.getDate();
+            var mo = d.toLocaleString('default', { month: 'long' });
+            var ye = d.getFullYear()
+            document.getElementById("id1").innerHTML = da + "/" + mo + "/" + ye;
+        }
+        function time() {
+            const t = new Date();
+            var day = t.toLocaleString('default', { weekday: 'short' });
+            var mo = t.toLocaleString('default', { month: 'short' });
+            var da = t.toLocaleString('default', { day: '2-digit' });
+            var ye = t.getFullYear()
+            var ho = t.getHours();
+            var mi = t.getMinutes();
+            var se = t.getSeconds();
+            var off = t.toLocaleString('default', { timeZoneName: "shortOffset" });
+            document.getElementById("id2").innerText = day + ", " +
+                mo + " " + da + " " + ye + " ," + ho + ":" + mi + ":" + se
+                + " " + off;
+        }
+    </script>
+</body>
+
+</html>

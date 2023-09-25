@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task JS8</title>
+    <style>
+      .bg-gradient {
+        background-image: linear-gradient(
+          yellow -20%,
+          pink 20%,
+          rgb(160, 16, 160) 100%
+        );
+      }
+      .text-danger {
+        color: red;
+      }
+      .btn-danger {
+        border-radius: 50px;
+        color: white;
+        border: 3px solid black;
+        background-color: red;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    </style>
+    <script>
+      function firstnameInfo() {
+        sub = document.getElementById("firstname").value;
+        if (sub.length === 0) {
+          document.getElementById("firstname-msg").innerHTML = `POOR`;
+          return false;
+        } else {
+          document.getElementById("firstname-msg").innerHTML = ``;
+          return true;
+        }
+      }
+      function lastnameInfo() {
+        sub = document.getElementById("lastname").value;
+        if (sub.length === 0) {
+          document.getElementById("lastname-msg").innerHTML = `POOR`;
+          return false;
+        } else {
+          document.getElementById("lastname-msg").innerHTML = ``;
+          return true;
+        }
+      }
+      function emailInfo() {
+        sub = document.getElementById("email").value;
+        if (sub.length === 0) {
+          document.getElementById("email-msg").innerHTML = `POOR`;
+          return false;
+        } else {
+          document.getElementById("email-msg").innerHTML = ``;
+          return true;
+        }
+      }
+      function passwordInfo() {
+        sub = document.getElementById("password").value;
+        if (sub.length === 0) {
+          document.getElementById("password-msg").innerHTML = `POOR`;
+          repasswordInfo();
+          return false;
+        } else {
+          document.getElementById("password-msg").innerHTML = ``;
+          repasswordInfo();
+          return true;
+        }
+      }
+      function repasswordInfo() {
+        sub1 = document.getElementById("repassword").value;
+        sub2 = document.getElementById("password").value;
+        if (sub1.length === 0 || sub1 !== sub2) {
+          document.getElementById(
+            "repassword-msg"
+          ).innerHTML = `POOR OR MISMATCH`;
+          return false;
+        } else {
+          document.getElementById("repassword-msg").innerHTML = ``;
+          return true;
+        }
+      }
+      function ageInfo() {
+        sub = document.getElementById("age").value;
+        if (sub.length === 0) {
+          document.getElementById("age-msg").innerHTML = `POOR`;
+          return false;
+        } else {
+          document.getElementById("age-msg").innerHTML = ``;
+          return true;
+        }
+      }
+      function mobileInfo() {
+        sub = document.getElementById("mobile").value;
+        if (sub.length === 0) {
+          document.getElementById("mobile-msg").innerHTML = `POOR`;
+          return false;
+        } else {
+          document.getElementById("mobile-msg").innerHTML = ``;
+          return true;
+        }
+      }
+      function addressInfo() {
+        sub = document.getElementById("address").value;
+        if (sub.length === 0) {
+          document.getElementById("address-msg").innerHTML = `POOR`;
+          return false;
+        } else {
+          document.getElementById("address-msg").innerHTML = ``;
+          return true;
+        }
+      }
+      function stateInfo() {
+        sub = document.getElementById("state").value;
+        if (sub.length === 0) {
+          document.getElementById("state-msg").innerHTML = `POOR`;
+          return false;
+        } else {
+          document.getElementById("state-msg").innerHTML = ``;
+          return true;
+        }
+      }
+      function onSubmit() {
+        val1 = firstnameInfo();
+        val2 = lastnameInfo();
+        val3 = emailInfo();
+        val4 = passwordInfo();
+        val5 = repasswordInfo();
+        val6 = ageInfo();
+        val7 = mobileInfo();
+        val8 = addressInfo();
+        val9 = stateInfo();
+        return (
+          val1 && val2 && val3 && val4 && val5 && val6 && val7 && val8 && val9
+        );
+      }
+    </script>
+  </head>
+  <body class="bg-gradient">
+    <form onsubmit="return onSubmit()">
+      <div style="display: grid; justify-items: center; padding-bottom: 30px">
+        <div>
+          <h1 style="color: blue">Registration Form</h1>
+        </div>
+        <div style="width: min(550px, 100%)">
+          <table cellspacing="0px" style="width: 100%">
+            <tbody style="width: 100%">
+              <tr style="width: 100%">
+                <td style="width: 30%; min-width: 150px">
+                  <label
+                    for="firstname"
+                    style="display: grid; justify-items: center"
+                    ><b>First Name</b></label
+                  >
+                </td>
+                <td style="width: 70%; min-width: 285px">
+                  <input
+                    type="text"
+                    id="firstname"
+                    style="width: 97%"
+                    onkeyup="firstnameInfo()"
+                  />
+                </td>
+                <td id="firstname-msg" class="text-danger"></td>
+              </tr>
+              <tr style="width: 100%">
+                <td style="width: 30%; min-width: 150px">
+                  <label
+                    for="lastname"
+                    style="display: grid; justify-items: center"
+                    ><b>Last Name</b></label
+                  >
+                </td>
+                <td style="width: 70%; min-width: 285px">
+                  <input
+                    type="text"
+                    id="lastname"
+                    style="width: 97%"
+                    onkeyup="lastnameInfo()"
+                  />
+                </td>
+                <td id="lastname-msg" class="text-danger"></td>
+              </tr>
+              <tr style="width: 100%">
+                <td style="width: 30%; min-width: 150px">
+                  <label
+                    for="email"
+                    style="display: grid; justify-items: center"
+                    ><b>Email</b></label
+                  >
+                </td>
+                <td style="width: 70%; min-width: 285px">
+                  <input
+                    type="email"
+                    id="email"
+                    style="width: 97%"
+                    onkeyup="emailInfo()"
+                  />
+                </td>
+                <td id="email-msg" class="text-danger"></td>
+              </tr>
+              <tr style="width: 100%">
+                <td style="width: 30%; min-width: 150px">
+                  <label
+                    for="password"
+                    style="display: grid; justify-items: center"
+                    ><b>Password</b></label
+                  >
+                </td>
+                <td style="width: 70%; min-width: 285px">
+                  <input
+                    type="password"
+                    id="password"
+                    style="width: 97%"
+                    onkeyup="passwordInfo()"
+                  />
+                </td>
+                <td id="password-msg" class="text-danger"></td>
+              </tr>
+              <tr style="width: 100%">
+                <td style="width: 30%; min-width: 150px">
+                  <label
+                    for="repassword"
+                    style="display: grid; justify-items: center"
+                    ><b>Re Password</b></label
+                  >
+                </td>
+                <td style="width: 70%; min-width: 285px">
+                  <input
+                    type="password"
+                    id="repassword"
+                    style="width: 97%"
+                    onkeyup="repasswordInfo()"
+                  />
+                </td>
+                <td id="repassword-msg" class="text-danger"></td>
+              </tr>
+              <tr style="width: 100%">
+                <td style="width: 30%; min-width: 150px" rowspan="2">
+                  <label
+                    for="gender"
+                    style="display: grid; justify-items: center"
+                    ><b>Gender:</b></label
+                  >
+                </td>
+                <td style="width: 70%; min-width: 285px">
+                  <input type="radio" name="gender" id="male" /><label
+                    for="male"
+                    >Male</label
+                  >
+                </td>
+              </tr>
+              <tr style="width: 100%">
+                <td style="width: 70%; min-width: 285px">
+                  <input type="radio" name="gender" id="female" /><label
+                    for="female"
+                    >Female</label
+                  >
+                </td>
+              </tr>
+              <tr style="width: 100%">
+                <td style="width: 30%; min-width: 150px">
+                  <label for="age" style="display: grid; justify-items: center"
+                    ><b>Age:</b></label
+                  >
+                </td>
+                <td style="width: 70%; min-width: 285px">
+                  <input
+                    type="number"
+                    id="age"
+                    style="width: 97%"
+                    onkeyup="ageInfo()"
+                  />
+                </td>
+                <td id="age-msg" class="text-danger"></td>
+              </tr>
+              <tr style="width: 100%">
+                <td style="width: 30%; min-width: 150px">
+                  <label
+                    for="mobile"
+                    style="display: grid; justify-items: center"
+                    ><b>Phone Number</b></label
+                  >
+                </td>
+                <td style="width: 70%; min-width: 285px">
+                  <input
+                    type="tel"
+                    id="mobile"
+                    style="width: 97%"
+                    onkeyup="mobileInfo()"
+                  />
+                </td>
+                <td id="mobile-msg" class="text-danger"></td>
+              </tr>
+              <tr style="width: 100%">
+                <td style="width: 30%; min-width: 150px; height: 100px">
+                  <label
+                    for="address"
+                    style="display: grid; justify-items: center"
+                    ><b>Address</b></label
+                  >
+                </td>
+                <td style="width: 70%; min-width: 285px; height: 100px">
+                  <textarea
+                    id="address"
+                    style="width: 97%; height: 90%"
+                    onkeyup="addressInfo()"
+                  ></textarea>
+                </td>
+                <td id="address-msg" class="text-danger"></td>
+              </tr>
+              <tr style="width: 100%">
+                <td style="width: 30%; min-width: 150px">
+                  <label
+                    for="state"
+                    style="display: grid; justify-items: center"
+                    ><b>State</b></label
+                  >
+                </td>
+                <td style="width: 70%; min-width: 285px">
+                  <input
+                    type="text"
+                    id="state"
+                    style="width: 97%"
+                    onkeyup="stateInfo()"
+                  />
+                </td>
+                <td id="state-msg" class="text-danger"></td>
+              </tr>
+              <tr style="width: 100%">
+                <td style="width: 30%; min-width: 150px">
+                  <label
+                    for="country"
+                    style="display: grid; justify-items: center"
+                    ><b>Country</b></label
+                  >
+                </td>
+                <td style="width: 70%; min-width: 285px">
+                  <select name="country" id="country">
+                    <option name="country" value="Invalid">
+                      Choose your country
+                    </option>
+                    <option name="country" value="India">India</option>
+                    <option name="country" value="USA">USA</option>
+                  </select>
+                </td>
+              </tr>
+              <tr style="width: 100%">
+                <td style="width: 30%; min-width: 150px">
+                  <label
+                    for="languages"
+                    style="display: grid; justify-items: center"
+                    ><b>Languages known</b></label
+                  >
+                </td>
+                <td style="width: 70%; min-width: 285px">
+                  <input type="checkbox" name="languages" id="eng" /><label
+                    for="eng"
+                    >English</label
+                  >
+                  <input type="checkbox" name="languages" id="kan" /><label
+                    for="eng"
+                    >Kannada</label
+                  >
+                  <input type="checkbox" name="languages" id="hin" /><label
+                    for="eng"
+                    >Hindi</label
+                  >
+                  <input type="checkbox" name="languages" id="tel" /><label
+                    for="eng"
+                    >Telugu</label
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <input type="checkbox" name="tnc" id="tnc" /><label for="tnc"
+                    >Hereby I declare all the given details are true</label
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <div style="display: grid; justify-content: right">
+                    <div>
+                      Log in to
+                      <a href="https://www.google.com">Ethnus</a> website
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <br />
+        <div>
+          <button type="submit" class="btn-danger">REGISTER</button>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
